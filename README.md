@@ -123,10 +123,22 @@ A literature search (web and arXiv queries on non-backtracking walks, Ihara zeta
 functions, walk-regular infinite graphs and polytypes; the 17 works citing
 Thorpe 1972, by title; the Palomar database; the author's reference library)
 found no earlier statement of the loop equality at every site, or for
-aperiodic stackings. It is close to known results: an expert can obtain the
-periodic, site-averaged case from Thorpe's theorem and the Ihara–Bass
-reduction, and the new step is that the walk counts along each bond are also
-stacking-independent (#102 Lemma 2 (b)). We claim no more than this. The
+aperiodic stackings. It is close to known results, and we claim no more than
+this:
+
+* the formal proof of `loop_count_eq` uses only the closed-walk counts
+  (`W_closed`, Thorpe's equality extended to all stackings) and the local loop
+  formula for (q+1)-regular graphs with equal closed-walk counts, which is a
+  short consequence of the Hashimoto–Bass recursion; `loop_equality` follows
+  from it;
+* a loop of length m at a site sees only a bounded window of layers, and every
+  such window occurs in a periodic polytype, so the aperiodic case reduces to
+  the periodic one by locality;
+* per-vertex and rooted Ihara zeta functions of infinite graphs are studied by
+  Grigorchuk–Żuk (2004) and Lenz–Pogorzelski–Schmidt (2019).
+
+What the entry adds is the explicit per-site statement for every close-packed
+stacking, the explicit count, and a complete machine-checked proof. The
 Fibonacci stacking and its aperiodicity are classical; only the loop statement
 on it is new, as an instance of the main theorem. We know of no earlier Lean
 formalisation of these statements.
